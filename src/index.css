@@ -2,94 +2,78 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
-
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 40 100% 97%;
+    --foreground: 240 20% 20%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 240 20% 20%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 240 20% 20%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 220 70% 55%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 340 60% 65%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 220 20% 92%;
+    --muted-foreground: 220 10% 50%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 160 50% 50%;
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 70% 60%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 220 20% 88%;
+    --input: 220 20% 88%;
+    --ring: 220 70% 55%;
 
-    --radius: 0.5rem;
+    --radius: 1rem;
+
+    /* Game-specific tokens */
+    --clock-face: 45 80% 96%;
+    --clock-border: 220 30% 80%;
+    --clock-hour-hand: 220 70% 45%;
+    --clock-minute-hand: 340 60% 55%;
+    --clock-center: 30 80% 60%;
+    --clock-tick: 220 20% 70%;
+
+    --correct: 145 60% 45%;
+    --correct-glow: 145 70% 70%;
+    --wrong: 0 65% 55%;
+    --wrong-glow: 0 70% 75%;
+
+    --bubble-bg: 0 0% 100%;
+    --bubble-shadow: 220 30% 85%;
+
+    --option-bg: 0 0% 100%;
+    --option-hover: 220 60% 95%;
+    --option-border: 220 30% 88%;
+
+    --settings-bg: 0 0% 100%;
+
+    --teacher-skin: 30 60% 78%;
+    --teacher-hair: 25 50% 30%;
+    --teacher-shirt: 220 60% 55%;
+    --teacher-cheek: 0 60% 80%;
+
+    --confetti-1: 340 80% 60%;
+    --confetti-2: 220 80% 60%;
+    --confetti-3: 45 90% 60%;
+    --confetti-4: 160 70% 50%;
+    --confetti-5: 280 60% 60%;
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 }
@@ -101,5 +85,122 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'Nunito', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Fredoka', sans-serif;
   }
 }
+
+@layer utilities {
+  .font-heading {
+    font-family: 'Fredoka', sans-serif;
+  }
+  .font-body {
+    font-family: 'Nunito', sans-serif;
+  }
+  .bg-game-gradient {
+    background: linear-gradient(180deg, hsl(200 80% 92%) 0%, hsl(var(--background)) 40%, hsl(40 100% 97%) 100%);
+  }
+}
+
+@keyframes cloud-drift {
+  0% { transform: translateX(-20px); opacity: 0.4; }
+  50% { opacity: 0.6; }
+  100% { transform: translateX(20px); opacity: 0.4; }
+}
+
+.animate-cloud { animation: cloud-drift 12s ease-in-out infinite alternate; }
+
+@keyframes teacher-arm {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(-8deg); }
+}
+.animate-teacher-arm { animation: teacher-arm 0.6s ease-in-out infinite; }
+
+/* Teacher mascot animations */
+@keyframes teacher-breathe {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+
+@keyframes teacher-blink {
+  0%, 90%, 100% { transform: scaleY(1); }
+  95% { transform: scaleY(0.1); }
+}
+
+@keyframes teacher-talk {
+  0%, 100% { d: path("M 35 52 Q 40 56 45 52"); }
+  50% { d: path("M 35 52 Q 40 60 45 52"); }
+}
+
+@keyframes teacher-bounce {
+  0%, 100% { transform: translateY(0); }
+  30% { transform: translateY(-8px); }
+  50% { transform: translateY(-4px); }
+}
+
+@keyframes teacher-tilt {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(8deg); }
+}
+
+@keyframes teacher-wave {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-15deg); }
+  75% { transform: rotate(15deg); }
+}
+
+@keyframes bubble-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+@keyframes bubble-enter {
+  0% { opacity: 0; transform: scale(0.8) translateY(8px); }
+  100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+@keyframes shake-wrong {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-6px); }
+  40% { transform: translateX(6px); }
+  60% { transform: translateX(-4px); }
+  80% { transform: translateX(4px); }
+}
+
+@keyframes bounce-correct {
+  0%, 100% { transform: scale(1); }
+  40% { transform: scale(1.12); }
+  60% { transform: scale(0.95); }
+  80% { transform: scale(1.05); }
+}
+
+@keyframes glow-correct {
+  0%, 100% { box-shadow: 0 0 0 0 hsl(var(--correct-glow) / 0); }
+  50% { box-shadow: 0 0 20px 6px hsl(var(--correct-glow) / 0.5); }
+}
+
+@keyframes confetti-fall {
+  0% { transform: translateY(-10vh) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+}
+
+@keyframes clock-glow {
+  0%, 100% { filter: drop-shadow(0 0 0 transparent); }
+  50% { filter: drop-shadow(0 0 12px hsl(var(--primary) / 0.3)); }
+}
+
+.animate-breathe { animation: teacher-breathe 3s ease-in-out infinite; }
+.animate-blink { animation: teacher-blink 4s ease-in-out infinite; }
+.animate-talk { animation: teacher-talk 0.3s ease-in-out infinite; }
+.animate-teacher-bounce { animation: teacher-bounce 0.5s ease-out; }
+.animate-teacher-tilt { animation: teacher-tilt 0.6s ease-in-out; }
+.animate-teacher-wave { animation: teacher-wave 0.5s ease-in-out 2; }
+.animate-bubble-float { animation: bubble-float 3s ease-in-out infinite; }
+.animate-bubble-enter { animation: bubble-enter 0.4s ease-out forwards; }
+.animate-shake { animation: shake-wrong 0.4s ease-out; }
+.animate-bounce-correct { animation: bounce-correct 0.5s ease-out; }
+.animate-glow-correct { animation: glow-correct 1s ease-out; }
+.animate-confetti { animation: confetti-fall 3s ease-in forwards; }
